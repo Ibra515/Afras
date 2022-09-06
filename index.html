@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test-afras</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <!-- google-fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header dir="rtl">
+        <div class="container">
+            <a class="logo" href="#">
+                <img src="http://www.afras.com.sa/Content/images/logo.png" alt="Logo">
+            </a>
+            <nav>
+                <i class="fa-solid fa-bars toggle-menu" onclick="ChangeDisplay()"></i>
+                <script>
+                    function ChangeDisplay() {
+                        var x = document.getElementById("mobile-menu");
+                        if (x.style.display === "none") {
+                            x.style.display = "flex";
+                        } else {
+                            x.style.display = "none";
+                        }
+
+                    }
+
+                </script>
+
+                <ul>
+                    <li><a href="" class="active">الصفحة الرئيسية</a></li>
+                    <li><a href="#about">من نحن</a> </li>
+                    <li><a href="#industrys">قطاعات الأعمال</a></li>
+                    <li><a href="#human">الموارد البشرية</a></li>
+                    <li><a href="">معرض الصور</a></li>
+                    <li><a href="">أخبار الشركة</a></li>
+                    <li><a href="">اتصل بنا</a></li>
+                </ul>
+                <ul id="mobile-menu" onmouseup="document.getElementById('mobile-menu').style.display='none'"
+                    onmouseleave="document.getElementById('mobile-menu').style.display='none'">
+                    <li><a href="" class="active">الصفحة الرئيسية</a></li>
+                    <li><a href="#about">من نحن</a> </li>
+                    <li><a href="#industrys">قطاعات الأعمال</a></li>
+                    <li><a href="#human">الموارد البشرية</a></li>
+                    <li><a href="">معرض الصور</a></li>
+                    <li><a href="">أخبار الشركة</a></li>
+                    <li><a href="">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <a class="form" href="#">
+                <i class="fa-solid fa-right-to-bracket i-login"></i>
+                <p>تسجيل الدخول</p>
+            </a>
+        </div>
+
+    </header>
+
+    <!-- Slideshow container -->
+    <!-- <div class="container"> -->
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 7</div>
+            <img src="http://www.afras.com.sa/Content/images/slider/new_slide1.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 7</div>
+            <img src="http://www.afras.com.sa/Content/images/slider/new_slide3.jpg" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 7</div>
+            <img src="http://www.afras.com.sa/Content/images/slider/new_slide4.jpg" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 7</div>
+            <img src="http://www.afras.com.sa/Content/images/slider/new_slide6.jpg" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 7</div>
+            <img src="http://www.afras.com.sa/Content/images/slider/new_slide7.jpg" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">6 / 7</div>
+            <img src="http://www.afras.com.sa/Content/images/slider/new_slide2.jpg" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">7 / 7</div>
+            <img src="http://www.afras.com.sa/Content/images/slider/new_slide5.jpg" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span>
+
+    </div>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" activeb", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " activeb";
+        } 
+    </script>
+    <!-- </div> -->
+    <div class="about" id="about">
+        <div class="container">
+            <div class="heading">
+                <h2>من نحن</h2>
+                <p>شركة أفراس للتجارة والمقاولات، شركة سعودية ذات مسئولية محدودة، إنطلقت مسيرتها في عام 1976م، وذلك بهدف
+                    المنافسة على مشاريع التشغيل والصيانة للمباني والمستشفيات في جميع أنحاء المملكة. </p>
+            </div>
+            <div class="about-content">
+                <div class="box-text">
+                    <h3>
+                        كلمة الرئيس
+                    </h3>
+
+                    <p>السلام عليكم ورحمة الله وبركاته،،،
+                        عندما بدأت مسيرتنا في عام 1976م، كنا نتطلع إلى المستقبل ويحدونا الأمل في غد مشرق، نعوّل على
+                        العديد من العوامل المواتية ومن أهمها مشاريع البنية التحتية العملاقة التي بدأ تنفيذها على نطاق
+                        واسع في المملكة، والدعم الذي يوليه قادة المملكة حفظهم الله للشركات الناشئة حتى تقف على أرضية
+                        صلبة.
+                        <span id="dots"></span><span id="more">
+                            منذ البداية، كان مبدأنا الصدق في المعاملة والإخلاص في العمل، وخدمة العميل على خير وجه.
+                            حققنا
+                            الكثير من الخطوات المدروسة وكنا على الدوام نحرص على التعلم من تجاربنا وتجارب الآخرين.
+                            وها نحن الآن، نقف بعون الله وتوفيقه على أرض صلبة، نواصل المسيرة بخطى وثابة من خلال العمل
+                            المخلص
+                            والسعي الدؤوب نحو تحقيق غايات التنمية المتكاملة، نتعلم من دروس الماضي ونتلمس خطوات المستقبل
+                            بوعي
+                            وثقة، ضارعين إلى الله العلي القدير أن يوفقنا لخدمة هذه البلاد العزيزة على قلوبنا.
+                            لقد واكبنا النهضة العملاقة في مملكتنا الغالية والتي تقوم على المقدرات الطبيعية التي حباها
+                            الله
+                            بها وثروتها البشرية المتنامية التي بدأت ترسم معالم عهد جديد من الإزدهار والرخاء بدعم من
+                            حكومتنا
+                            الرشيدة بقيادة ملك الإنسانية خادم الحرمين الشريفين وولي عهده الأمين حفظهم الله.
+                            ها نحن ندشن بعون الله موقع أفراس على الشبكة العنكبوتية رغبة في مواكبة آخر التطورات
+                            التكنولوجية
+                            في مجالات عملنا، ولتسهيل الأمر على عملائنا والتواصل معهم كي يتسنى لنا تقديم أفضل مستوى ممكن
+                            من
+                            الخدمات، وإستمرار تميزنا وبحثنا الدائم عن إرضائهم وتلبية متطلباتهم، وعن كل ما يعزز موقعنا
+                            التنافسي في السوق، مع الحفاظ على أعلى مستويات الجودة وأفضل المعايير الفنية
+                            والتنافسية.
+                        </span>
+                        <button onclick="myFunction()" id="myBtn">...المزيد</button>
+                        <script>
+                            function myFunction() {
+                                var dots = document.getElementById("dots");
+                                var moreText = document.getElementById("more");
+                                var btnText = document.getElementById("myBtn");
+
+                                if (dots.style.display === "none") {
+                                    dots.style.display = "inline";
+                                    btnText.innerHTML = "...المزيد";
+                                    moreText.style.display = "none";
+                                } else {
+                                    dots.style.display = "none";
+                                    btnText.innerHTML = "...أقل";
+                                    moreText.style.display = "inline";
+                                }
+                            } 
+                        </script>
+                    </p>
+
+                    <h3>الرؤية والرسالة</h3>
+                    <p>السلام عليكم ورحمة الله وبركاته،،،
+                        تتطلع أفراس لأن ترسخ موقعها كواحدة من أكبر الشركات العاملة في مجالات المقاولات والتشغيل والصيانة
+                        والنظافة والإعاشة والحراسات الأمنية ومكافحة الحشرات والضيافة في المملكة.
+                        <span id="dots1"></span><span id="moret">
+                            تحقيق رؤية أفراس من خلال التركيز على تطوير موظفينا والالتزام التام بمعايير الجودة والمنافسة
+                            الشريفة وتلبية متطلبات العملاء على خير وجه ضمن منظومة متطورة واستراتيجية تسويقية فاعله،
+                            وتوسيع
+                            قاعدة عملائنا من خلال تطوير أنشطتنا أفقيا ورأسيا بما يتواكب مع متطلبات واحتياجات الأسواق.
+                        </span>
+                        <button onclick="myFunction1()" id="myBtn1">...المزيد</button>
+                        <script>
+                            function myFunction1() {
+                                var dots = document.getElementById("dots1");
+                                var moretText = document.getElementById("moret");
+                                var btnText = document.getElementById("myBtn1");
+
+                                if (dots1.style.display === "none") {
+                                    dots1.style.display = "inline";
+                                    btnText.innerHTML = "...المزيد";
+                                    moretText.style.display = "none";
+                                } else {
+                                    dots1.style.display = "none";
+                                    btnText.innerHTML = "...أقل";
+                                    moretText.style.display = "inline";
+                                }
+                            } 
+                        </script>
+                    </p>
+
+                    <h3>أهدافنا</h3>
+                    <p>الحفاظ على موقعنا الريادي في السوق، بل وتعزيزه من خلال التركيز على العملاء وتلبية إحتياجاتهم
+                        والإبتكار والإستجابة السريعة لمتغيرات السوق.
+
+                        تنمية قدراتنا من خلال تطوير مواردنا البشرية والمادية وإستقطاب أفضل الخبرات والتجهيزات والمعدات،
+                        والسعي نحو الأفضل دون كلل أو ملل.
+
+                        تقديم برامج إبداعية و <span id="morett"><span id="dots2"></span>حلول متكاملة
+
+
+                            تحقيق التميز في الأداء مقروناً بالرغبة الصادقة لخدمة الوطن من خلال إنجاز المشاريع المختلفة
+                            بجودة عالية وأداء متفوق وتحقيق أهداف التنمية لحكومة خادم الحرمين الشريفين حفظه الله.
+
+                            بناء ولاء العملاء وتعزيز علاقاتنا وشراكتنا معهم بما يلبي متطلباتهم ويحوز رضاهم.
+
+                            تحقيق التكامل بين نشاطات وقطاعات العمل لدينا ضمن منظومة واحدة مترابطة تدعم بعضها البعض بما
+                            يعزز الإزدهار الكلي والشامل للشركة.
+
+                            المساهمة في التنمية الإجتماعية والإقتصادية في المملكة
+
+                        </span>
+                        <button onclick="myFunction2()" id="myBtn2">...المزيد</button>
+                        <script>
+                            function myFunction2() {
+                                var dots = document.getElementById("dots2");
+                                var morettText = document.getElementById("morett");
+                                var btnText = document.getElementById("myBtn2");
+
+                                if (dots2.style.display === "none") {
+                                    dots2.style.display = "inline";
+                                    btnText.innerHTML = "...المزيد";
+                                    morettText.style.display = "none";
+                                } else {
+                                    dots2.style.display = "none";
+                                    btnText.innerHTML = "...أقل";
+                                    morettText.style.display = "inline";
+                                }
+                            } 
+                        </script>
+                    </p>
+
+                    <h3>الإدارة العامة و الفروع</h3>
+
+                    <p>يعد مقر الإدارة العامة للمجموعة في الرياض قلب أفراس و موطناً لفريق دعم باقي المناطق
+                        داخل المملكة.
+                        أكثر من 20.000 شخص موهوب يعمل هنا، عبر مجموعة من الوظائف الاستراتيجية و دعم الأعمال التجارية,
+                        ليتعاملوا مع كل شيء من الموارد البشرية والمشتريات,والتسويق,والخدمات اللوجستية إلى إدارة
+                        المناقصات و إدارة <span id="morettt"><span id="dots3"></span> المشاريع ,العلاقات الحكومية و
+                            الحسابات. إضافةً إلى وضع خطط التطوير المستمر
+                            للمجموعة.
+
+
+
+                            كل شخص يؤدي مهامه كلاعب أساسي في فريق العمل، للتأكد من أن نستمر في الحفاظ على عملائنا
+                            والموظفين
+                            سعداء و راضون على حد سواء، وأن نعمل دائما نحو تحقيق رؤية أفراس.
+
+
+
+                            إضافةً إلى مقرنا الرئيسي و مستودعاتنا و الأرشيف في الرياض، لدينا المكاتب الإقليمية و الفروع
+                            التالية لكي نتمكن من خدمة كامل مشاريعنا داخل المملكة بأكملها بأكثر فاعلية:
+
+                            <span class="branches-list">
+                                <span>فرع المنطقة الشرقية - الدمام</span>
+                                <span>فرع المنطقة الغربية - جدة</span>
+                                <span>فرع منطقة عسير - أبها</span>
+                                <span>فرع مكة المكرمة </span>
+                                <span>فرع الطائف</span>
+
+                            </span>
+                        </span>
+
+                        <button onclick="myFunction3()" id="myBtn3">...المزيد</button>
+                        <script>
+                            function myFunction3() {
+                                var dots = document.getElementById("dots3");
+                                var moretttText = document.getElementById("morettt");
+                                var btnText = document.getElementById("myBtn3");
+
+                                if (dots3.style.display === "none") {
+                                    dots3.style.display = "inline";
+                                    btnText.innerHTML = "...المزيد";
+                                    moretttText.style.display = "none";
+                                } else {
+                                    dots3.style.display = "none";
+                                    btnText.innerHTML = "...أقل";
+                                    moretttText.style.display = "inline";
+                                }
+                            } 
+                        </script>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="industrys" id="industrys">
+        <div class="container">
+            <div class="heading">
+                <h2>قطاعات الأعمال</h2>
+                <p>
+                    ينصب اهتمامنا الأساسي على مشاريع المقاولات والتشغيل والصيانة والنظافة والإعاشة والحراسات الأمنية
+                    والزراعة والضيافة ومكافحة الحشرات، مع التركيز دائماًعلى معايير الجودة والصحة والسلامة والصدق في
+                    المعاملة.</p>
+            </div>
+            <div class="industrys-content">
+                <div class="box-industry">
+                    <h3>
+                        <i class="fa-solid fa-gears op"></i>
+                        التشغيل والصيانة
+                        <span id="CloseOpen" onclick="dropdown()"></span>
+
+                    </h3>
+                    <p id="IndustP">بدأت أفراس في تقديم خدمات التشغيل والصيانة منذ إنشائها في عام 1976م. وسار منحنى
+                        أفراس صعودا
+                        بمواكبة مشاريع البنية التحتية في المملكة التي تحتاج إلى متابعة حثيثة وخدمات متخصصة للحفاظ على
+                        حالتها وقدرتها على خدمة القطاعات المستهدفة لأطول فترة ممكنة.
+                        لقد برعنا في هذا المجال، كما هو الحال في أنشطتنا الأخرى، وتعددت إسهاماتنا وإنجازاتنا، وقدمنا
+                        خدماتنا على أرقى مستوى، وحظينا بالعديد من شهادات التقدير التي نعتز بها ونعتبرها علامات بارزة في
+                        مسيرة أفراس، ذلك أنها جاءت عرفانا بقدراتنا وإسهاماتنا المخلصة التي دأبنا على تقديمها وتطويرها
+                        باستمرار نحو الأفضل.
+                        وقد حرصت أفراس على استثمار مبالغ كبيرة لشراء وتطوير أنظمتها الذاتية والتقنيات العصرية كي تحافظ
+                        على موقعها المتميز في هذا القطاع وتعزيز قدرتها على تنفيذ برامج الصيانة والتشغيل بتكاليف اقتصادية
+                        وبإمكانيات فنية عالية مقرونة بالقدرة على إيجاد الحلول المتكاملة لعمليات التشغيل والصيانة، بما في
+                        ذلك عمليات الصيانة الوقائية حسب معايير ومواصفات الشركات المصنعة والصيانة التصحيحية حسب حاجة
+                        العميل ومن خلال كوادر فنية مدربة ومتخصصة لضمان أفضل النتائج المتوخاة.
+
+                    </p>
+                    <script>
+                        var Z = document.getElementById('CloseOpen')
+                        var C = document.getElementById('IndustP')
+                        function dropdown() {
+
+                            if (C.style.display === "none") {
+                                C.style.display = "block";
+                                Z.style.borderTopColor = "transparent";
+                                Z.style.borderBottomColor = "black";
+                            } else {
+                                C.style.display = "none";
+                                Z.style.rotate = "0deg";
+                                Z.style.borderTopColor = "black";
+                                Z.style.borderBottomColor = "transparent";
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="box-industry">
+                    <h3>
+                        <i class="fa-solid fa-screwdriver-wrench op"></i> قطاع الإنشاءات
+                        <span id="CloseOpen1" onclick="dropdown1()"></span>
+
+                    </h3>
+                    <p id="IndustP1">بيعتبر قطاع الإنشاءات أحد اللبنات الرئيسية لدى أفراس، وقد نجح في تنفيذ العديد من
+                        المشاريع الهامة التي لاقت استحسان العملاء، بعضها من نوع مشاريع تسليم مفتاح. وهذه المشاريع تعكس
+                        قدرة أفراس على تنفيذ مشاريع المقاولات على درجة عالية من المهنية والأداء.
+
+
+
+                        يتمتع قسم الإنشاءات لدينا بتواجد خبرات وكفاءات عالية مدعومة بأسطول ضخم من المعدات والتجهيزات
+                        والمرافق، مما يمكن أفراس من تنفيذ كافة أنواع وأحجام مشاريع المقاولات الإنشائية بما يحظى بالرضا
+                        التام للعملاء. ويشمل ذلك مشاريع الأسواق والمستشفيات والمنشآت الحكومية وغير الحكومية.
+
+                    </p>
+                    <script>
+                        function dropdown1() {
+
+                            if (document.getElementById('IndustP1').style.display === "none") {
+                                document.getElementById('IndustP1').style.display = "block";
+                                document.getElementById('CloseOpen1').style.borderTopColor = "transparent";
+                                document.getElementById('CloseOpen1').style.borderBottomColor = "black";
+                            } else {
+                                document.getElementById('IndustP1').style.display = "none";
+                                document.getElementById('CloseOpen1').style.rotate = "0deg";
+                                document.getElementById('CloseOpen1').style.borderTopColor = "black";
+                                document.getElementById('CloseOpen1').style.borderBottomColor = "transparent";
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="box-industry">
+                    <h3>
+                        <i class="fa-solid fa-city op"></i>
+                        إدارة المرافق
+                        <span id="CloseOpen2" onclick="dropdown2()"></span>
+
+                    </h3>
+                    <p id="IndustP2">تؤهلنا خبراتنا الطويلة ومواردنا الواسعة لتقديم خدمات مساندة لا تضاهي لعملائنا من
+                        كافة القطاعات التي تشتمل دون حصر على المستشفيات والمجمعات السكنية والتجارية والفنادق والبنوك
+                        والجامعات والمدارس والمصانع والنوادي الرياضية وغير ذلك.
+
+
+
+                        نحن ملتزمون بتقديم خدمات متميزة لا تلبي فقط تطلعات العميل وإنما تفوق توقعاته. ونحرص في هذا
+                        الإطار على استقطاب أمهر الكوادر الفنية ممن يتمتعون بالخبرات العالية والإلمام التام بمتطلبات
+                        السوق مع الانتباه التام للتفاصيل مما يمكن العميل من التركيز على أعماله الأساسية ومتابعة
+                        استثماراته وترك أعمال المساندة لنا.
+
+
+
+                        لقد حققنا الكثير من الإنجازات في هذا الصدد بفضل منهجنا الخاص في تقديم الخدمات المساندة والذي
+                        يقوم على مبدأ الشراكة مع العميل والاستجابة لأدق التفاصيل لديه لكي ينصب تركيزه على استثماراته
+                        وأعماله الأساسية.
+
+                    </p>
+                    <script>
+                        function dropdown2() {
+
+                            if (document.getElementById('IndustP2').style.display === "none") {
+                                document.getElementById('IndustP2').style.display = "block";
+                                document.getElementById('CloseOpen2').style.borderTopColor = "transparent";
+                                document.getElementById('CloseOpen2').style.borderBottomColor = "black";
+                            } else {
+                                document.getElementById('IndustP2').style.display = "none";
+                                document.getElementById('CloseOpen2').style.rotate = "0deg";
+                                document.getElementById('CloseOpen2').style.borderTopColor = "black";
+                                document.getElementById('CloseOpen2').style.borderBottomColor = "transparent";
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="box-industry">
+                    <h3>
+                        <i class="fa-solid fa-building-shield op"></i>
+                        الخدمات الأمنية <span id="CloseOpen3" onclick="dropdown3()"></span>
+
+                    </h3>
+                    <p id="IndustP3">مؤسسة سياج الوطن للخدمات الامنية هي إحدى المؤسسات التي تنطوي تحت مظلة مجموعة شركات
+                        ومؤسسات شركة أفراس للتجارة والمقاولات.
+
+                        يتعاظم دور الخدمات الأمنية في المنشآت المختلفة يوماً بعد يوم. وتتطور أعمالها وأساليبها وآلياتها
+                        على نحو أصبح معه من الضروري على الشركات المقدمة لهذه الخدمات أن تواكب المستجدات في السوق وتقدم
+                        الحلول التي ترضي العميل. وهذا ما نفعله بالضبط ونزيد عليه الاهتمام بتدريب عناصرنا الأمنية
+                        والإشراف عليها من قبل أشخاص على قدر عال من المؤهلات في هذا المجال لضمان تأدية كل فرد لعمله
+                        كاملاً وبأدق التفاصيل ودون ترك مجال للمفاجآت.
+
+
+
+                    </p>
+                    <script>
+                        function dropdown3() {
+
+                            if (document.getElementById('IndustP3').style.display === "none") {
+                                document.getElementById('IndustP3').style.display = "block";
+                                document.getElementById('CloseOpen3').style.borderTopColor = "transparent";
+                                document.getElementById('CloseOpen3').style.borderBottomColor = "black";
+                            } else {
+                                document.getElementById('IndustP3').style.display = "none";
+                                document.getElementById('CloseOpen3').style.rotate = "0deg";
+                                document.getElementById('CloseOpen3').style.borderTopColor = "black";
+                                document.getElementById('CloseOpen3').style.borderBottomColor = "transparent";
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="box-industry">
+                    <h3>
+                        <i class="fa-solid fa-gift op"></i>
+                        خدمات الضيافة<span id="CloseOpen4" onclick="dropdown4()"></span>
+
+                    </h3>
+                    <p id="IndustP4">منضع خبراتنا في خدمة عملائنا من قطاعات الفنادق والبنوك والشركات والنوادي الرياضية
+                        وغير ذلك من المنشآت التي تحتاج للخدمة المتميزة التي تقرن بين المظهر والجوهر بواسطة عمالة مدربة
+                        تجمع بين المنظر اللائق والكفاءة والتدريب وفهم أصول التعامل والاهتمام الاحترافي بأدق التفاصيل.
+
+
+
+                    </p>
+                    <script>
+                        function dropdown4() {
+
+                            if (document.getElementById('IndustP4').style.display === "none") {
+                                document.getElementById('IndustP4').style.display = "block";
+                                document.getElementById('CloseOpen4').style.borderTopColor = "transparent";
+                                document.getElementById('CloseOpen4').style.borderBottomColor = "black";
+                            } else {
+                                document.getElementById('IndustP4').style.display = "none";
+                                document.getElementById('CloseOpen4').style.rotate = "0deg";
+                                document.getElementById('CloseOpen4').style.borderTopColor = "black";
+                                document.getElementById('CloseOpen4').style.borderBottomColor = "transparent";
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="box-industry">
+                    <h3>
+                        <i class="fas fa-tree op"></i>
+
+
+                        خدمات الزراعة والحدائق<span id="CloseOpen5" onclick="dropdown5()"></span>
+
+                    </h3>
+                    <p id="IndustP5">ممعرفتنا التامة بالمناخات المختلفة السائدة في المملكة وما يناسب كل بيئة من النباتات
+                        الخارجية والداخلية تجعلنا قادرين على تحسين البيئة الداخلية والخارجية للمنشآت المختلفة بما يخلق
+                        أجواء مريحة تبعث على الإبداع وتنم عن الذوق الرفيع.
+
+
+
+                        لدينا الخبرة لتقديم أفضل الحلول ضمن أطر اقتصادية مجدية وبإشراف نخبة من المهندسين الزراعيين
+                        والعمالة المتخصصة في أعمال التنسيق والزراعة الخارجية والداخلية، وباستخدام أفضل أساليب الري
+                        المتخصصة والمعدات والأدوات التي تناسب كل حالة على حدة.
+
+
+
+                    </p>
+                    <script>
+                        function dropdown5() {
+
+                            if (document.getElementById('IndustP5').style.display === "none") {
+                                document.getElementById('IndustP5').style.display = "block";
+                                document.getElementById('CloseOpen5').style.borderTopColor = "transparent";
+                                document.getElementById('CloseOpen5').style.borderBottomColor = "black";
+                            } else {
+                                document.getElementById('IndustP5').style.display = "none";
+                                document.getElementById('CloseOpen5').style.rotate = "0deg";
+                                document.getElementById('CloseOpen5').style.borderTopColor = "black";
+                                document.getElementById('CloseOpen5').style.borderBottomColor = "transparent";
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="box-industry">
+                    <h3>
+                        <i class="fa-solid fa-hand-sparkles op"></i>
+
+
+                        خدمات النظافة<span id="CloseOpen6" onclick="dropdown6()"></span>
+
+                    </h3>
+                    <p id="IndustP6">
+                        تقوم خدماتنا على الالتزام الكامل بمعايير الأداء والصحة والنظافة من خلال كوادر إدارية وإشرافية
+                        مؤهلة وقادرة على ابتكار أفضل الأساليب والحلول ووضع الجداول بما يلبي احتياجات العملاء والإدارة
+                        الفاعلة لفرق العمالة المنظمة التي تعمل وفقاً لمنهج دقيق وضعناه وطورناه وحافظنا عليه، فكانت
+                        النتيجة راحة العميل ورضاه.
+
+                    </p>
+                    <script>
+                        function dropdown6() {
+
+                            if (document.getElementById('IndustP6').style.display === "none") {
+                                document.getElementById('IndustP6').style.display = "block";
+                                document.getElementById('CloseOpen6').style.borderTopColor = "transparent";
+                                document.getElementById('CloseOpen6').style.borderBottomColor = "black";
+                            } else {
+                                document.getElementById('IndustP6').style.display = "none";
+                                document.getElementById('CloseOpen6').style.rotate = "0deg";
+                                document.getElementById('CloseOpen6').style.borderTopColor = "black";
+                                document.getElementById('CloseOpen6').style.borderBottomColor = "transparent";
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="box-industry">
+                    <h3>
+                        <i class="fa-solid fa-file-waveform op"></i>
+
+
+                        التشغيل الطبي<span id="CloseOpen7" onclick="dropdown7()"></span>
+
+                    </h3>
+                    <p id="IndustP7">
+                        كي نترجم نجاح أعمالنا بأفضل صورة و لكي تتكامل أعمالنا في مشاريعنا , فقد تم إنشاء قطاع التشغيل
+                        الطبي والذي سنقسم مجاله عمله إلى الأنشطة التالية:
+                    </p>
+                    <script>
+                        function dropdown7() {
+
+                            if (document.getElementById('IndustP7').style.display === "none") {
+                                document.getElementById('IndustP7').style.display = "block";
+                                document.getElementById('CloseOpen7').style.borderTopColor = "transparent";
+                                document.getElementById('CloseOpen7').style.borderBottomColor = "black";
+                            } else {
+                                document.getElementById('IndustP7').style.display = "none";
+                                document.getElementById('CloseOpen7').style.rotate = "0deg";
+                                document.getElementById('CloseOpen7').style.borderTopColor = "black";
+                                document.getElementById('CloseOpen7').style.borderBottomColor = "transparent";
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="box-industry">
+                    <h3>
+                        <i class="fa-solid fa-seedling op"></i>
+
+
+                        أفراس للخدمات البيئية<span id="CloseOpen8" onclick="dropdown8()"></span>
+
+                    </h3>
+                    <p id="IndustP8">
+                        تقوم خدماتنا على الالتزام الكامل بمعايير الأداء والصحة والنظافة من خلال كوادر إدارية وإشرافية
+                        مؤهلة وقادرة على ابتكار أفضل الأساليب والحلول ووضع الجداول بما يلبي احتياجات العملاء والإدارة
+                        الفاعلة لفرق العمالة المنظمة التي تعمل وفقاً لمنهج دقيق وضعناه وطورناه وحافظنا عليه، فكانت
+                        النتيجة راحة العميل ورضاه
+
+                        تتطلع أفراس لأن ترسخ موقعها كواحدة من أكبر الشركات العاملة في مجال الخدمات البيئية في المملكة
+                        تحقيق رؤية أفراس من خلال التركيز على تطوير موظفينا والالتزام التام بمعايير الجودة والمنافسة
+                        الشريفة وتلبية متطلبات العملاء على خير وجه ضمن منظومة متطورة واستراتيجية تسويقية فاعله، وتوسيع
+                        قاعدة عملائنا من خلال تطوير أنشطتنا أفقيا ورأسيا بما يتواكب مع متطلبات واحتياجات الأسواق
+                    </p>
+                    <script>
+                        function dropdown8() {
+
+                            if (document.getElementById('IndustP8').style.display === "none") {
+                                document.getElementById('IndustP8').style.display = "block";
+                                document.getElementById('CloseOpen8').style.borderTopColor = "transparent";
+                                document.getElementById('CloseOpen8').style.borderBottomColor = "black";
+                            } else {
+                                document.getElementById('IndustP8').style.display = "none";
+                                document.getElementById('CloseOpen8').style.rotate = "0deg";
+                                document.getElementById('CloseOpen8').style.borderTopColor = "black";
+                                document.getElementById('CloseOpen8').style.borderBottomColor = "transparent";
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="human-resource" id="human">
+        <div class="container">
+            <div class="heading">
+                <h2>الموارد البشرية</h2>
+                <p>من منطلق حرصها على تقديم أفضل خدمة ممكنة للعميل وفقا المعايير العالمية في الجودة والالتزام، تعمد
+                    أفراس إلى استقطاب وتوظيف أفضل الكوادر البشرية والعمالة المتخصصة القادرة على تحقيق رؤية وأهداف أفراس.
+                </p>
+            </div>
+            <div class="human-content">
+                <div class="box">
+                    <h3>التدريب و التطوير</h3>
+                    <p>تأسيسا على إستراتيجيتنا القائمة على مبدأ 'نجاح الاستثمار يبدأ من استثمارك في الموظف'، وانطلاقا من
+                        قناعة أفراس بأهمية تنمية المهارات الفنية والإدارية للكوادر البشرية، فقد أنشأت أفراس في عام 1998م
+                        مركز تدريب بإشراف نخبة من المدربين المتخصصين مهمتهم الأساسية تدريب وتأهيل الكوادر الفنية
+                        والإدارية من خلال مجموعة من برامج التدريب الشاملة والحديثة الهادفة إلى تطوير قدرات الموظفين
+                        وإكسابهم المهارات الإدارية والفنية مما يؤهلهم لتقديم الخدمات بطرق احترافية عالية الجودة.</p>
+                </div>
+                <div class="box">
+                    <h3> البرامج التدريبية</h3>
+                    <p>الالتزام بتقديم التدريب لمنسوبينا , سواءً أكان فنياً أم إدارياً وضمان مخاطبة ( العقل و القلب و
+                        الحواس ) عبر التدريب على النواحي النظرية و نواحي السلوك و النواحي العملية. لضمان إكتساب أو تصحيح
+                        أو إضافة للمعرفة و المهارة و السلوك .
+
+                        ومواكبتنا لأحدث أنطمة العصر من ناحية التكنولوجيا و إستخدامها في تذليل عقبات العمل وتسريع
+                        وتيرته,لينعكس على تنفيذنا لأعمالنا و علاقتنا مع عملائنا </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+    <button onclick="topFunction()" id="TBtn" title="Go to top"></button>
+    <script>
+        //Get the button:
+        mybutton = document.getElementById("TBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        } 
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
+</body>
+
+</html>
